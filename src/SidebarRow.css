@@ -1,0 +1,33 @@
+.sidebarRow{
+    display: flex;
+    padding-left: 40px;
+    justify-content: left;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    width: 210px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid transparent;
+
+}
+.sidebarRow:hover:not(:first-child){
+    background-color: rgb(231, 230, 230);
+    border: 3px solid rgb(152, 149, 149);
+    transition: 0.2s;
+}
+.sidebarRow:first-child{
+    margin-top: 50px;
+}
+.sidebarRow:last-child{
+    padding-left: 30px;
+    width: 220px;
+}
+
+.sidebarRow h4{
+    margin-left: 10px;
+}
+
+.sidebarRow > .MuiSvgIcon-root{
+    color: rgb(72, 119, 194);
+}
