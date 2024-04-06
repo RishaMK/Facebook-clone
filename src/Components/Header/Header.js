@@ -6,8 +6,8 @@ import AddIcon from '@mui/icons-material/Add';
 import ForumIcon from '@mui/icons-material/Forum';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import SmoothIconButton from './Components/SmoothIconButton';
-import {useStateValue} from './StateProvider';
+import SmoothIconButton from './SmoothIconButton';
+import {useStateValue} from '../../State/StateProvider';
 
 function Header() {
     const [{user},dispatch] = useStateValue();

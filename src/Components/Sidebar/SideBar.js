@@ -6,7 +6,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {useStateValue} from './StateProvider';
+import {useStateValue} from '../../State/StateProvider';
 
 
 function SideBar() {

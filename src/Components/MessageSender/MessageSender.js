@@ -4,8 +4,8 @@ import { Avatar } from '@mui/material'
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
-import { useStateValue } from './StateProvider';
-import db from './firebase';
+import { useStateValue } from '../../State/StateProvider';
+import db from '../../firebase';
 import firebase from "firebase/compat/app";
 
 function MessageSender() {
