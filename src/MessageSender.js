@@ -4,17 +4,30 @@ import { Avatar } from '@mui/material'
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
+import { useStateValue } from './StateProvider';
+import db from './firebase';
+import firebase from "firebase/compat/app";
 
 function MessageSender() {
+    const [{user},dispatch]=useStateValue();
 
     const [input,setInput] = useState('');
-    const [imgurl,setImgurl] = useState('');
+    const [imgUrl,setImgUrl] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //add in the list
+        
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imgUrl,
+
+        });
+
         setInput('');
-        setImgurl('');
+        setImgUrl('');
 
     };
   return (
@@ -23,7 +36,7 @@ function MessageSender() {
 
         <div className='messageSender__top'>
 
-            <Avatar src='/images/profile_pic.jpg'/>
+            <Avatar src={user.photoURL}/>
 
             <form>
 
@@ -31,13 +44,13 @@ function MessageSender() {
                 value={input} 
                 onChange={(e) => setInput(e.target.value)} 
                 className='messageSender__input' 
-                placeholder={`What's on your mind?`} 
+                placeholder={`What's on your mind,${user.displayName}?`} 
                 />
 
                 <input 
                 placeholder='Image URL (Optional)'
-                value={imgurl}
-                onChange={(e) => setImgurl(e.target.value)}
+                value={imgUrl}
+                onChange={(e) => setImgUrl(e.target.value)}
                 />
 
                 <button onClick={handleSubmit} type='submit'>hidden submit</button>

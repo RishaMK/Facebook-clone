@@ -6,11 +6,14 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {useStateValue} from './StateProvider';
+
 
 function SideBar() {
+  const [{user},dispatch] = useStateValue();
   return (
     <div className='sidebar'>
-      <SidebarRow src='/images/profile_pic.jpg' title='risha_keerthi'/>
+      <SidebarRow src={user.photoURL} title={user.displayName}/>
       <SidebarRow Icon={EmojiFlagsIcon} title='Pages'/>
       <SidebarRow Icon={GroupIcon} title='Friends'/>
       <SidebarRow Icon={ChatBubbleIcon} title='Messenger'/>

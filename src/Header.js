@@ -7,8 +7,11 @@ import ForumIcon from '@mui/icons-material/Forum';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SmoothIconButton from './Components/SmoothIconButton';
+import {useStateValue} from './StateProvider';
 
 function Header() {
+    const [{user},dispatch] = useStateValue();
+
   return (
     <div className='header'>
 
@@ -40,8 +43,8 @@ function Header() {
         <div className='header__right'>
 
             <div className='header__info'>
-                <Avatar src='/images/profile_pic.jpg'/>
-                <h4>risha_keerthi</h4>
+                <Avatar src={user.photoURL}/>
+                <h4>{user.displayName}</h4>
             </div>
 
             <SmoothIconButton>
