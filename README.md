@@ -18,7 +18,6 @@ This is a Facebook clone web application built using React for the frontend and 
 
 - **React:** Frontend framework for building user interfaces.
 - **Firebase:** Backend platform for authentication and database management.
-- **React Redux:** Library for managing application state and data flow.
 - **Material UI:** React component library for styling and UI design.
 
 ## Getting Started
